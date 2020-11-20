@@ -11,3 +11,20 @@ jobs:
       - image: circleci/python:latest
     steps:
       - run: echo "Deploy"
+
+
+workflows:
+  # version: 2.1
+
+  stage_workflow:
+    job:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requirement:
+            - build
