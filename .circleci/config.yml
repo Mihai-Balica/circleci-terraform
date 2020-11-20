@@ -1,12 +1,12 @@
 version: 2.1
 
 jobs:
-  build:
+  build-artifact:
     docker:
       - image: circleci/python:latest
     steps:
       - run: echo "Build"
-  deploy:
+  deploy-to-staging:
     docker:
       - image: circleci/python:latest
     steps:
@@ -14,13 +14,14 @@ jobs:
 
 workflows:
   version: 2.1
+
   stage_workflow:
     jobs:
-      - build:
+      - build-artifact:
           filters:
             branches:
               only: master
-      - deploy:
+      - deploy-to-staging:
           filters:
             branches:
               only: master
