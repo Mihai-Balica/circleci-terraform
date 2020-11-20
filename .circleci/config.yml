@@ -13,8 +13,7 @@ jobs:
       - run: echo "Deploy"
 
 workflows:
-  # version: 2
-
+  version: 2.1
   stage_workflow:
     jobs:
       - build:
