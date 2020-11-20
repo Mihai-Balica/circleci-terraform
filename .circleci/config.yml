@@ -20,10 +20,10 @@ workflows:
       - build_artifact:
           filters:
             branches:
-              only: master
+              only: main
       - deploy_to_staging:
           filters:
             branches:
-              only: master
+              only: main
           requires:
             - build_artifact
