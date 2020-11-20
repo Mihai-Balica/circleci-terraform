@@ -17,7 +17,7 @@ workflows:
   # version: 2.1
 
   stage_workflow:
-    job:
+    jobs:
       - build:
           filters:
             branches:
