@@ -13,10 +13,10 @@ jobs:
       - run: echo "Deploy"
 
 workflows:
-  version: 2
+  # version: 2
 
   stage_workflow:
-    job:
+    jobs:
       - build:
           filters:
             branches:
